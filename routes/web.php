@@ -16,3 +16,10 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+
+Route::prefix('tests')->name('test.')->group(function () {
+    Route::get('/{id}', 'TestController@show')->name('show');
+    Route::get('/', 'TestController@index')->name('index');
+});
+
