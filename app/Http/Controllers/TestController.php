@@ -8,11 +8,42 @@ class TestController extends Controller
 {
     public function index(Request $request)
     {
-        print_r($request->all());
+        $user = [
+            [
+                'username' => 'zhang',
+                'sex' => '男',
+                'country' => 'cn'
+            ],
+            [
+                'username' => 'wen',
+                'sex' => '男',
+                'country' => 'usa'
+            ],
+            [
+                'username' => 'feng',
+                'sex' => '女',
+                'country' => 'uk'
+            ]
+        ];
+        return view('test.index', [
+            'users' => $user,
+            'html' => '<img src="http://images.yoger.com.cn/uploads/image/20200211/1581393472.jpg">',
+            'title' => 'test'
+        ]);
     }
 
     public function show($id)
     {
         echo $id;
+    }
+
+    public function edit()
+    {
+        //
+    }
+
+    public function save(Request $request)
+    {
+        dd($request->all());
     }
 }
