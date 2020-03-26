@@ -28,7 +28,8 @@ class TestController extends Controller
         return view('test.index', [
             'users' => $user,
             'html' => '<img src="http://images.yoger.com.cn/uploads/image/20200211/1581393472.jpg">',
-            'title' => 'test'
+            'title' => 'test',
+            'message' => 'Hello World!',
         ]);
     }
 

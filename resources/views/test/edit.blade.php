@@ -67,7 +67,7 @@
         <div class="flex-center position-ref full-height">
             <form action="{{ route('test.save') }}" method="post">
                 <input type="text" name="username">
-                <input type="hidden" name="_token" value="{{ csrf_token() }}">
+                @csrf
                 <input type="submit">
             </form>
         </div>
